@@ -338,3 +338,7 @@ export const findPlayerByName = async (
 ): Promise<PlayerModel | undefined> => {
   return database.find((player) => player.name === name);
 };
+
+export const insertPlayer = async (player: PlayerModel) => {
+  database.push(player);
+};

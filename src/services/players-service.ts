@@ -2,6 +2,7 @@ import { response } from "express";
 import { PlayerModel } from "../models/player-model";
 import * as PlayerRepository from "../repositories/players-repository";
 import * as HttpResponse from "../utils/http-helper";
+import { statisticsModel } from "../models/statistics-model";
 
 export const getPlayerService = async () => {
   const data = await PlayerRepository.findAllPlayers();
@@ -20,10 +21,11 @@ export const getPlayerByIdService = async (id: number) => {
   const data = await PlayerRepository.findPlayerById(id);
   let response = null;
 
-  if (data) {
-    response = await HttpResponse.ok(data);
+  if (Object.keys(id).length === 0) {
+    response = await HttpResponse.badRequest();
+    console.log("Player not found");
   } else {
-    response = await HttpResponse.noContent();
+    response = await HttpResponse.ok(data);
   }
 
   return response;
@@ -36,16 +38,35 @@ export const createPlayerService = async (player: PlayerModel) => {
     await PlayerRepository.insertPlayer(player);
     response = await HttpResponse.created();
   } else {
-    response = HttpResponse.badRequest();
+    response = await HttpResponse.badRequest();
   }
   return response;
 };
 
 export const deletePlayerService = async (id: number) => {
   let response = null;
-  await PlayerRepository.deletePlayer(id);
+  const data = await PlayerRepository.deletePlayer(id);
 
-  response = HttpResponse.ok({ message: "Deleted" });
+  if (Object.keys(id).length === 0) {
+    response = await HttpResponse.badRequest();
+    console.log("Player not found");
+  } else {
+    response = await HttpResponse.ok({ message: "Deleted" });
+  }
+  return response;
+};
 
+export const updatePlayerService = async (
+  id: number,
+  statistics: statisticsModel
+) => {
+  const data = await PlayerRepository.findAndModifyPlayer(id, statistics);
+  let response = null;
+
+  if (Object.keys(data).length === 0) {
+    response = await HttpResponse.badRequest();
+  } else {
+    response = await HttpResponse.ok(data);
+  }
   return response;
 };

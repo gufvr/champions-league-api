@@ -21,11 +21,10 @@ export const getPlayerByIdService = async (id: number) => {
   const data = await PlayerRepository.findPlayerById(id);
   let response = null;
 
-  if (Object.keys(id).length === 0) {
-    response = await HttpResponse.badRequest();
-    console.log("Player not found");
-  } else {
+  if (data) {
     response = await HttpResponse.ok(data);
+  } else {
+    response = await HttpResponse.badRequest();
   }
 
   return response;
@@ -47,11 +46,16 @@ export const deletePlayerService = async (id: number) => {
   let response = null;
   const data = await PlayerRepository.deletePlayer(id);
 
-  if (Object.keys(id).length === 0) {
-    response = await HttpResponse.badRequest();
-    console.log("Player not found");
+  // if (Object.keys(id).length === 0) {
+  //   response = await HttpResponse.badRequest();
+  //   console.log("Player not found");
+  // } else {
+  //   response = await HttpResponse.ok(data);
+  // }
+  if (id) {
+    response = await HttpResponse.ok(data);
   } else {
-    response = await HttpResponse.ok({ message: "Deleted" });
+    response = await HttpResponse.badRequest();
   }
   return response;
 };

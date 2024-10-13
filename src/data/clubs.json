@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "name": "Real Madrid"
+  },
+  {
+    "id": 2,
+    "name": "Manchester City"
+  },
+  {
+    "id": 3,
+    "name": "Bayern Munich"
+  },
+  {
+    "id": 4,
+    "name": "Barcelona"
+  },
+  {
+    "id": 5,
+    "name": "Paris Saint-Germain"
+  },
+  {
+    "id": 6,
+    "name": "Napoli"
+  },
+  {
+    "id": 7,
+    "name": "Internazionale"
+  },
+  {
+    "id": 8,
+    "name": "AC Milan"
+  },
+  {
+    "id": 9,
+    "name": "Manchester United"
+  },
+  {
+    "id": 10,
+    "name": "Arsenal"
+  },
+  {
+    "id": 11,
+    "name": "Atletico Madrid"
+  },
+  {
+    "id": 12,
+    "name": "Sevilla"
+  },
+  {
+    "id": 13,
+    "name": "Benfica"
+  },
+  {
+    "id": 14,
+    "name": "FC Porto"
+  },
+  {
+    "id": 15,
+    "name": "Borussia Dortmund"
+  },
+  {
+    "id": 16,
+    "name": "RB Leipzig"
+  },
+  {
+    "id": 17,
+    "name": "Celtic"
+  },
+  {
+    "id": 18,
+    "name": "Shakhtar Donetsk"
+  },
+  {
+    "id": 19,
+    "name": "Galatasaray"
+  },
+  {
+    "id": 20,
+    "name": "Feyenoord"
+  },
+  {
+    "id": 21,
+    "name": "Real Sociedad"
+  },
+  {
+    "id": 22,
+    "name": "Lens"
+  },
+  {
+    "id": 23,
+    "name": "Union Berlin"
+  },
+  {
+    "id": 24,
+    "name": "Newcastle United"
+  },
+  {
+    "id": 25,
+    "name": "Braga"
+  },
+  {
+    "id": 26,
+    "name": "Red Star Belgrade"
+  },
+  {
+    "id": 27,
+    "name": "Copenhagen"
+  },
+  {
+    "id": 28,
+    "name": "Lazio"
+  },
+  {
+    "id": 29,
+    "name": "Antwerp"
+  },
+  {
+    "id": 30,
+    "name": "Young Boys"
+  },
+  {
+    "id": 31,
+    "name": "Salzburg"
+  },
+  {
+    "id": 32,
+    "name": "AC Sparta Prague"
+  }
+]
